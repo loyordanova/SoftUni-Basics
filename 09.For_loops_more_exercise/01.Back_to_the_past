@@ -1,0 +1,22 @@
+heirloom = float(input())
+year = int(input())
+
+his_years = 18
+needed_money = 0
+
+
+for i in range(1800, year +1):
+    if i != 1800:
+        his_years += 1
+    if i % 2 == 0:
+        needed_money += 12000
+
+    elif i % 2 != 0:
+        needed_money += (12000 + (his_years * 50))
+
+
+if needed_money <= heirloom:
+    print(f'Yes! He will live a carefree life and will have {heirloom - needed_money:.2f} dollars left.')
+
+else:
+    print(f'He will need {abs(needed_money - heirloom):.2f} dollars to survive.')
