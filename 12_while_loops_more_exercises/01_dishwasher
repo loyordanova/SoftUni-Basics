@@ -1,0 +1,30 @@
+bottles = int(input())
+total_bottle_qty = 750 * bottles
+pans = 0
+plates = 0
+place_in_washer = 0
+detergent_used = 0
+
+while total_bottle_qty >= 0:
+    command = input()
+    if command == 'End':
+        break
+    if command != 'End':
+        command = int(command)
+        place_in_washer += 1
+        if place_in_washer % 3 == 0:
+            pans_in = command * 15
+            pans += command
+            total_bottle_qty -= pans_in
+        else:
+            plates_in = command * 5
+            plates += command
+            total_bottle_qty -= plates_in
+
+if total_bottle_qty >= 0:
+    print(f'Detergent was enough!\n'
+          f'{plates} dishes and {pans} pots were washed.\n'
+          f'Leftover detergent {total_bottle_qty - detergent_used} ml.')
+
+else:
+    print(f'Not enough detergent, {abs(detergent_used - total_bottle_qty)} ml. more necessary!')
