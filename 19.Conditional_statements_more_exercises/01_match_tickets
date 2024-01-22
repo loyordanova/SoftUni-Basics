@@ -1,0 +1,24 @@
+budget = float(input())
+category = input()
+group_number = int(input())
+
+if 1 <= group_number <= 4:
+    budget = budget - budget * 0.75
+elif 5 <= group_number <= 9:
+    budget = budget - budget * 0.60
+elif 10 <= group_number <= 24:
+    budget = budget - budget * 0.50
+elif 25 <= group_number <= 49:
+    budget = budget - budget * 0.40
+elif 50 <= group_number:
+    budget = budget - budget * 0.25
+
+if category == "VIP":
+    money_left = budget - 499.99 * group_number
+elif category == 'Normal':
+    money_left = budget - 249.99 * group_number
+
+if money_left >= 0:
+    print(f'Yes! You have {money_left:.2f} leva left.')
+else:
+    print(f'Not enough money! You need {abs(money_left):.2f} leva.')
