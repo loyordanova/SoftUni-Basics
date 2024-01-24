@@ -1,0 +1,16 @@
+import math
+
+people = int(input())
+tax = float(input())
+sunloundge = float(input())
+umbrella = float(input())
+
+people_wanting_sunlondges = math.ceil(people * 0.75)
+tax_for_sunloundges = people_wanting_sunlondges * sunloundge
+tax_for_umbrellas = math.ceil((people / 2)) * umbrella
+
+total = tax * people + tax_for_umbrellas + tax_for_sunloundges
+
+print(f'{total:.2f} lv.')
+
+
