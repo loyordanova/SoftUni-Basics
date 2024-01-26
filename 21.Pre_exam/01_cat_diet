@@ -1,0 +1,16 @@
+fatt = int(input())
+protein = int(input())
+carbs = int(input())
+total_calories = int(input())
+percentage_of_water = int(input())
+
+fatt_final = ((total_calories * fatt) / 100) / 9
+protein_final = ((total_calories * protein) / 100) / 4
+carbs_final = ((total_calories * carbs) / 100) / 4
+
+total_food = fatt_final + protein_final + carbs_final
+calories_for_one_day = total_calories / total_food
+
+without_water = calories_for_one_day - calories_for_one_day * percentage_of_water / 100
+
+print(f'{without_water:.4f}')
